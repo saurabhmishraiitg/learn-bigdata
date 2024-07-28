@@ -1,0 +1,211 @@
+# learn-bigdata
+
+Collection of source code and resource related to various Bigdata tools and technologies such as Hadoop, HIVE, Sqoop etc.
+
+## Good Datasets
+
+- Trading Data
+  - <https://github.com/Deutsche-Boerse/dbg-pds>
+
+## Curriculum : Learn Bigdata
+
+- Topics to be covered
+  - Hadoop
+    - <https://learning.oreilly.com/library/view/hadoop-the-definitive/9781491901687/>
+    - 4 V's of BigData
+      - <https://towardsdatascience.com/a-brief-summary-of-apache-hadoop-a-solution-of-big-data-problem-and-hint-comes-from-google-95fd63b83623>
+      - <https://developer.yahoo.com/hadoop/tutorial/module1.html?guccounter=1>
+    - What is Datalake
+    - What is new in YARN? MRv1 vs YARN
+    - HDFS
+      - Architecture
+      - <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html>
+      - Blocks
+      - Namenode, DataNode
+      - Block Caching
+      - ***Advanced*** HDFS Federation
+        - <https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/Federation.html>
+      - HDFS High Availability
+      - Distcp
+        - <https://hadoop.apache.org/docs/stable/hadoop-distcp/DistCp.html>
+    - Working with HDFS
+      - Basic Shell commands
+      - Programmatic Way
+    - Data Formats, Compression
+      - <https://blog.clairvoyantsoft.com/big-data-file-formats-3fb659903271>
+      - AVRO
+      - Parquet
+    - YARN
+      - Architecture
+    - <http://ercoppa.github.io/HadoopInternals/HadoopArchitectureOverview.html>
+    - <https://blog.cloudera.com/untangling-apache-hadoop-yarn-part-1-cluster-and-yarn-basics/>
+      - Mesos vs YARN
+    - <http://radar.oreilly.com/2015/02/a-tale-of-two-clusters-mesos-and-yarn.html>
+      - ***Advanced*** Federation
+    - <https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/Federation.html>
+      - Scheduler
+    - Capacity Scheduler
+    - Fair Scheduler
+      - YARN Application run lifecycle
+      - Speculative Execution
+    - ***Obscure*** Hadoop Streaming
+    - Security
+      - Kerberos
+    - MicroNugget: How Does Kerberos Work?
+    - <http://www.roguelynn.com/words/explain-like-im-5-kerberos/>
+
+  - Map Reduce (Basics)
+    - <https://learning.oreilly.com/library/view/hadoop-the-definitive/9781491901687/>
+    - Concepts
+      - Mapper, Reducer
+      - Combiner
+      - Partitioner
+      - Shuffle/Sort
+      - Distributed Cache
+      - Multi Output Format
+    - <http://grepalex.com/2013/05/20/multipleoutputs-part1/>
+    - <http://grepalex.com/2013/07/16/multipleoutputs-part2/>
+      - Counters
+      - Serialization, Custom Writable
+    - <https://developer.yahoo.com/hadoop/tutorial/module5.html#types>
+    - Anatomy of Mapreduce Job
+      - <http://ercoppa.github.io/HadoopInternals/AnatomyMapReduceJob.html>
+      - Details : <https://developer.yahoo.com/hadoop/tutorial/module4.html>
+    - Problem Solving
+      - Word Count
+      - Secondary Sorting
+    - <https://vangjee.wordpress.com/2012/03/20/secondary-sorting-aka-sorting-values-in-hadoops-mapreduce-programming-paradigm/>
+  - HIVE
+    - <https://learning.oreilly.com/library/view/apache-hive-essentials/9781788995092/>
+    - Traditional Datawarehouse comparison
+    - Basic queries
+      - SELECT
+      - UNION
+      - JOIN's
+      - VIEW's
+      - MERGE
+      - INDEX
+      - CTAS, CTE
+      - SORT, CLUSTER, DISTRIBUTE
+    - <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+SortBy#LanguageManualSortBy-SyntaxofClusterByandDistributeBy>
+    - Understand various HIVE configuration properties
+      - <https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties>
+    - Partitioning, Bucketing
+      - MSCK
+    - Functions
+      - UDF, UDAF, UDTF
+    - **Optional** <https://blog.dataiku.com/2013/05/01/a-complete-guide-to-writing-hive-udf>
+      - Windowing Function
+      - <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF>
+    - Optimizations
+      - <https://towardsdatascience.com/apache-hive-optimization-techniques-1-ce55331dbf5e>
+      - <https://medium.com/@info.ankitp/apache-hive-optimization-techniques-2-e60b6200eeca>
+      - TEZ
+      - Joins
+    - <https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization>
+      - Partition/Bucketing
+      - Vectorization
+      - Indexing and Bloom Filters
+    - <https://snippetessay.wordpress.com/2015/07/25/hive-optimizations-with-indexes-bloom-filters-and-statistics/>
+      - File Format/Compression
+      - Cost Based Optimizer
+      - Predicate Pushdown
+      - Predicate Pushdown has been part of a lot of RDBMS systems for a long time now. It allows the where clause to be executed before the join, resulting in reduced amount of data sent over the network. For example, in the following query, the WHERE clause will get executed before the join. It will result in lesser data being sent to the reduce phase.
+      - enable PPD using following flag
+      - set hive.optimize.ppd = true;
+    - Columnar Data Format - ORC, Parquet
+    - HUE
+    - HiveServer2
+      - <https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Overview>
+    - Implementing SCD in HIVE
+    - Transactions in HIVE
+      - <https://cwiki.apache.org/confluence/display/Hive/Hive+Transactions>
+    - LLAP
+      - <https://medium.com/sqooba/hive-llap-brings-interactive-sql-queries-on-hadoop-8f876ef116d8>
+    - Security
+    - Problem Solving
+      - Word Count
+      - Running Average, SessionID count
+    - <http://shzhangji.com/blog/2017/09/04/hive-window-and-analytical-functions/>
+      - SCD
+    - <https://github.com/cartershanklin/hive-scd-examples>
+  - Spark
+    - <https://www.linkedin.com/learning/apache-spark-essential-training/welcome?u=26192810>
+    - Why Spark
+      - <http://spark.apache.org/docs/latest/quick-start.html>
+      - <https://mapr.com/blog/spark-101-what-it-what-it-does-and-why-it-matters/>
+    - ***Basics***
+      - <http://spark.apache.org/docs/latest/rdd-programming-guide.html>
+    - What is an RDD
+    - Spark Application Anatomy
+      - <https://mapr.com/blog/how-spark-runs-your-applications/>
+    - Concepts
+      - DAG
+      - Lazy Evaluation
+      - Transformation/Actions
+      - Broadcast, Accumulators
+    - <http://spark.apache.org/docs/latest/rdd-programming-guide.html#shared-variables>
+      - Executor
+      - Cache
+      - Data Sources
+    - <http://spark.apache.org/docs/latest/sql-data-sources.html>
+    - Optimizations
+      - <https://blog.clairvoyantsoft.com/improving-your-apache-spark-application-performance-e51e06339baa>
+      - ***Advanced***
+    - <https://medium.com/teads-engineering/spark-performance-tuning-from-the-trenches-7cbde521cf60>
+    - <https://blog.cloudera.com/demystifying-spark-jobs-to-optimize-for-cost-and-performance/>
+      - SQL Performance Tuning
+    - <http://spark.apache.org/docs/latest/sql-performance-tuning.html>
+    - Useful Operations
+      - Map, Flatmap
+      - Filter
+      - reduceByKey
+    - Catalyst Optimizer
+    - Dataframe and Datasets
+      - <https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html>
+      - <https://medium.zenika.com/a-comparison-between-rdd-dataframe-and-dataset-in-spark-from-a-developers-point-of-view-a539b5acf734>
+      - Comparison
+    - <https://techvidvan.com/tutorials/apache-spark-dataframe-vs-datasets/>
+    - Run Mode - Local, Client, Cluster
+    - Problem Solving
+      - RDD, Dataframe, Dataset
+    - <https://medium.com/@InDataLabs/converting-spark-rdd-to-dataframe-and-dataset-expert-opinion-826db069eb5>
+    - Spark Streaming
+      - <https://learning.oreilly.com/library/view/stream-processing-with/9781491944233/>
+
+  - NoSQL - HBase/Cassandra
+    - What is CAP Theorem
+    - HBase
+      - Region
+      - WAL
+      - Schema Design
+      - Shell Commands
+      - Accessing from HIVE
+      - Programmatic Access
+      - HFile
+    - <https://blog.cloudera.com/apache-hbase-i-o-hfile/>
+      - Write Path
+    - <https://blog.cloudera.com/apache-hbase-write-path/>
+      - Flushes/Compactions
+    - <https://www.ngdata.com/visualizing-hbase-flushes-and-compactions/>
+  - Sqoop
+    - <https://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html>
+    - sqoop-import
+    - sqoop-export
+    - sqoop-eval
+    - Concepts
+      - Controlling Parallelism
+      - Validation
+      - SplitBy
+  - Oozie
+  - Airflow
+  - Kafka
+  - Spark Streaming
+    - <https://learning.oreilly.com/library/view/stream-processing-with/9781491944233/>
+  - Flume
+    - <http://flume.apache.org/FlumeUserGuide.html>
+    - Architecture, Dataflow model
+    - Sources
+    - Sinks
+    - Channels
+    - Interceptor

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <!-- status : The level of internal Log4j events that should be logged to the console.
+    Valid values for this attribute are "trace", "debug", "info", "warn", "error" and "fatal".
+    Log4j will log details about initialization, rollover and other internal actions to the status logger.
+    Setting status="trace" is one of the first tools available to you if you need to troubleshoot log4j. -->
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %L - %msg%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!--        <Logger name="org.nexus" level="TRACE" additivity="false">-->
+        <!--            <AppenderRef ref="Console"/>-->
+        <!--        </Logger>-->
+
+        <!-- Suppress logs from a specific package. -->
+        <Logger name="org.nexus" level="INFO"/>
+
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
