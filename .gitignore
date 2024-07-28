@@ -1,0 +1,5 @@
+**/target
+**/dependency-reduced-pom.xml
+learn-hadoop/.factorypath
+**/.idea
+**/.DS_Store
